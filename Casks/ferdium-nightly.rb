@@ -9,8 +9,8 @@ cask "ferdium-nightly" do
     sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   end
 
-  # github.com/ferdium/ferdium-app was verified as official when first introduced to the cask
-  url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-#{version}#{arch}.dmg"
+  url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-#{version}#{arch}.dmg",
+      verified: "github.com/ferdium/ferdium-app/"
 
   name "Ferdium"
   desc "All your services in one place"
@@ -21,10 +21,19 @@ cask "ferdium-nightly" do
 
   app "Ferdium.app"
 
+  uninstall quit:   "com.ferdium.ferdium-app",
+            delete: "/Library/Logs/DiagnosticReports/Ferdium Helper_.*wakeups_resource.diag"
+
   zap trash: [
-    "~/Library/Application Support/Ferdium",
     "~/Library/Application Support/Caches/ferdium-updater",
-    "~/Library/Saved Application State/org.ferdium.ferdium-app.savedState",
-    "~/Library/Preferences/org.ferdium.ferdium-app.plist"
+    "~/Library/Application Support/Ferdium",
+    "~/Library/Caches/com.ferdium.ferdium-app",
+    "~/Library/Caches/com.ferdium.ferdium-app.ShipIt",
+    "~/Library/Logs/Ferdium",
+    "~/Library/Preferences/ByHost/com.ferdium.ferdium-app.ShipIt.*.plist",
+    "~/Library/Preferences/com.electron.ferdium.helper.plist",
+    "~/Library/Preferences/com.electron.ferdium.plist",
+    "~/Library/Preferences/com.ferdium.ferdium-app.plist",
+    "~/Library/Saved Application State/com.ferdium.ferdium-app.savedState",
   ]
 end
