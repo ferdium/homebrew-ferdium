@@ -1,12 +1,12 @@
 cask "ferdium-nightly" do
   arch = Hardware::CPU.intel? ? "" : "-arm64"
 
-  version "6.0.0-nightly.34"
+  version "6.0.0-nightly.35"
 
   if Hardware::CPU.intel?
-    sha256 "2be55554a94386a3e09bfad1ba1ef3e347d8d7fa8975fa290a402aade145b0b9"
+    sha256 "88ae93d690e3dca82706c788637c6735142d7b8fbde207dcd4dea4aa64b240ba"
   else
-    sha256 "c8884572da71172910241828b6e3651c2ffde7d41bca0b0cfc537b906b9f562c"
+    sha256 "13dd0487c361ee79fac3605a937564ffcf393d9d6fe1d736c8780428038f3588"
   end
 
   url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-#{version}#{arch}.dmg",
