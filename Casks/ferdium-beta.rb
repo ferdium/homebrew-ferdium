@@ -15,7 +15,7 @@ cask "ferdium-beta" do
   name "Ferdium"
   desc "All your services in one place"
   homepage "https://ferdium.org/"
-  conflicts_with "ferdium-nightly"
+  conflicts_with cask: "ferdium-nightly"
 
   # TODO: Need to turn this on after the in-app updater is verified to work
   # auto_updates true
