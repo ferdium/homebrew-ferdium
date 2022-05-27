@@ -1,12 +1,12 @@
-cask "ferdium-nightly" do
+cask "ferdium-beta" do
   arch = Hardware::CPU.intel? ? "" : "-arm64"
 
-  version "6.0.0-nightly.47"
+  version "6.0.0-beta.1"
 
   if Hardware::CPU.intel?
-    sha256 "3fd2121ca625f562c92d81640d178cf96bb36317fafce6852fe5dcc1150473c3"
+    sha256 "1cd7394bc26c59bcceb6d440ebfb49e0d0582e32ca96a202811512f648a94c64"
   else
-    sha256 "e065d889d1685fd73f3e4a0d6c7d5e6d1d14bd9e6e88b709647376e46936e8bd"
+    sha256 "ff64c6d110f29c657bf0cc52d9f41205a371c03b3f36b3a7535d31fa5f7e471a"
   end
 
   url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-#{version}#{arch}.dmg",
@@ -15,7 +15,7 @@ cask "ferdium-nightly" do
   name "Ferdium"
   desc "All your services in one place"
   homepage "https://ferdium.org/"
-  conflicts_with "ferdium-beta"
+  conflicts_with "ferdium-nightly"
 
   # TODO: Need to turn this on after the in-app updater is verified to work
   # auto_updates true
