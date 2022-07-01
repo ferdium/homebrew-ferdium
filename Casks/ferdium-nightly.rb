@@ -1,5 +1,5 @@
 cask "ferdium-nightly" do
-  arch = Hardware::CPU.intel? ? "" : "-arm64"
+  arch = Hardware::CPU.intel? ? "x64" : "arm64"
 
   version "6.0.0-nightly.81"
 
@@ -9,7 +9,7 @@ cask "ferdium-nightly" do
     sha256 "d9f13d153c327c259c88e8d6cc2aa9a301ff5b6101caa582a23c2242fd69b399"
   end
 
-  url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-#{version}#{arch}.dmg",
+  url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
       verified: "github.com/ferdium/ferdium-app/"
   name "Ferdium"
   desc "All your services in one place"
