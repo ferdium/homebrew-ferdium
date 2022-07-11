@@ -1,5 +1,5 @@
 cask "ferdium" do
-  arch = Hardware::CPU.intel? ? "" : "-arm64"
+  arch = Hardware::CPU.intel? ? "x64" : "arm64"
 
   version "6.0.0"
 
@@ -9,7 +9,7 @@ cask "ferdium" do
     sha256 "ff64c6d110f29c657bf0cc52d9f41205a371c03b3f36b3a7535d31fa5f7e471a"
   end
 
-  url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-#{version}#{arch}.dmg",
+  url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
       verified: "github.com/ferdium/ferdium-app/"
 
   name "Ferdium"
