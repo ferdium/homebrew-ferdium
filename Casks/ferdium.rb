@@ -1,20 +1,21 @@
 cask "ferdium" do
-  arch = Hardware::CPU.intel? ? "x64" : "arm64"
-
-  version "6.0.0"
-
-  if Hardware::CPU.intel?
-    sha256 "131c29c39275143d294b022581556cf9ac2ed458efc13fea06f677205d854da1"
-  else
-    sha256 "c9b4a05a0654e57065df2b2d56738178d83345f4de157ef72daa950b48e51188"
+  arch = on_intel do
+    "x64"
   end
+  on_arm do
+    "arm64"
+  end
+
+  version "6.1.0"
+  sha256 arm:   "3e039fe0145de38db5215c2c2643d8554b1b46a2f8dfd5a773987a0820f3e45c",
+         intel: "1237cded573cb225b76327f209e77f157330f64588951e902b631708cb43d5bd"
 
   url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
       verified: "github.com/ferdium/ferdium-app/"
-
   name "Ferdium"
   desc "All your services in one place"
   homepage "https://ferdium.org/"
+
   conflicts_with cask: "ferdium-nightly"
 
   # TODO: Need to turn this on after the in-app updater is verified to work
