@@ -1,14 +1,9 @@
 cask "ferdium" do
-  arch = on_intel do
-    "x64"
-  end
-  on_arm do
-    "arm64"
-  end
+  arch arm: "arm64", intel: "x64"
 
-  version "6.1.0"
-  sha256 arm:   "3e039fe0145de38db5215c2c2643d8554b1b46a2f8dfd5a773987a0820f3e45c",
-         intel: "1237cded573cb225b76327f209e77f157330f64588951e902b631708cb43d5bd"
+  version "6.2.1"
+  sha256 arm:   "8bdb64e813144f068129f7dbee86d61bf7b4eb6ec4b9348a3e1fedd8df1baab5",
+         intel: "f2566f8c0d0059017a48431f8cbfef87f912ae962ab7cd922984a53896e04b35"
 
   url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
       verified: "github.com/ferdium/ferdium-app/"
@@ -16,7 +11,7 @@ cask "ferdium" do
   desc "All your services in one place"
   homepage "https://ferdium.org/"
 
-  conflicts_with cask: "ferdium-nightly"
+  conflicts_with cask: "ferdium-beta"
 
   # TODO: Need to turn this on after the in-app updater is verified to work
   # auto_updates true
