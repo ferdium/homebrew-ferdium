@@ -8,13 +8,11 @@ cask "ferdium" do
   url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
       verified: "github.com/ferdium/ferdium-app/"
   name "Ferdium"
-  desc "All your services in one place"
+  desc "Multi-platform multi-messaging app"
   homepage "https://ferdium.org/"
 
+  auto_updates true
   conflicts_with cask: "ferdium-beta"
-
-  # TODO: Need to turn this on after the in-app updater is verified to work
-  # auto_updates true
 
   app "Ferdium.app"
 
