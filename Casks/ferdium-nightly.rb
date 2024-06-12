@@ -1,9 +1,9 @@
 cask "ferdium-nightly" do
   arch arm: "arm64", intel: "x64"
 
-  version "6.7.5-nightly.12"
-  sha256 arm:   "88f2f44f5074ce4e7d1fa2e843545b8afc4435dc980ea91583cedda081040305",
-         intel: "b77e3fd0c365e931fc905166b271aab1a2c76fd382815f974f255cb753f236e4"
+  version "6.7.5-nightly.13"
+  sha256 arm:   "ad56804548531ba13e83bfbceb4a1299a8059d8705ad6606e31c84c78549703e",
+         intel: "c87d8ab9d191dd3d2016420934be73df6a3af88cb15aa626f6d89020b3ce93d4"
 
   url "https://github.com/ferdium/ferdium-app/releases/download/v#{version}/Ferdium-mac-#{version}-#{arch}.dmg",
       verified: "github.com/ferdium/ferdium-app/"
